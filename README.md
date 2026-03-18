@@ -25,8 +25,8 @@ Here are a few projects that showcase my ability to handle complex architectures
 
 | Project | Description | Tech Stack | Source |
 |---------|-------------|------------|--------|
-| Onestep | A habit tracker app that helps users monitor and maintain daily habits, featuring intuitive tracking and progress visualization to encourage consistent personal growth. | TypeScript (97.8%), HTML (2.2%), Tailwind CSS | [View Code](https://github.com/hetavigheewala/Onestep) |
-| Ad-Creative-AI | An AI-powered platform that generates branded ad images and videos from product inputs and automates multi-platform campaign scheduling, showcasing end-to-end digital marketing automation. | TypeScript (97.8%), HTML (2.2%), OpenAI API, Tailwind CSS | [View Code](https://github.com/hetavigheewala/Ad-Creative-AI) |
+| Onestep | A habit tracker app that helps users monitor and maintain daily habits, featuring intuitive tracking and progress visualization to encourage consistent personal growth. | TypeScript, HTML, Tailwind CSS | [View Code](https://github.com/hetavigheewala/Onestep) |
+| Ad-Creative-AI | An AI-powered platform that generates branded ad images and videos from product inputs and automates multi-platform campaign scheduling, showcasing end-to-end digital marketing automation. | TypeScript, HTML, OpenAI API, Tailwind CSS | [View Code](https://github.com/hetavigheewala/Ad-Creative-AI) |
 | Nonary2IntVol | A versatile tool that converts ASCII nonary values to integers, calculates cube volumes, and provides statistical insights, combining efficient data processing with clear, user-friendly outputs. | C++, Python | [View Code](https://github.com/hetavigheewala/Nonary2IntVol) |
 
 [View More Projects](https://github.com/hetavigheewala?tab=repositories)
