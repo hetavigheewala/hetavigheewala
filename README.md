@@ -21,8 +21,8 @@ I build AI-powered systems that eliminate repetitive work, automate processes, a
 
 | Category        | Technologies |
 |-----------------|--------------|
-| Frontend        | React, Next.js, Tailwind CSS, TypeScript, HTML, CSS3 |
-| Backend         | Node.js, Express, Python (AI/ML), C++, Notion.js |
+| Frontend        | React, Next.js, Tailwind CSS, TypeScript, HTML |
+| Backend         | Node.js, Python (AI/ML), C++, Notion.js |
 | AI / ML         | OpenAI APIs, TensorFlow, PyTorch, Claude Code, Gemini Studio |
 | Database & Cloud| MySQL, AWS, Google Cloud, BigQuery |
 | Tools & DevOps  | Git, Docker, GitHub Actions, Adobe Suite, n8n, Make.com, Notion, Airtable, Slack, Power BI, VBA, GraphQL |
