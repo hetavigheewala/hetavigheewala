@@ -1,8 +1,8 @@
 # Hi there, I'm Hetavi Gheewala 👋
 
-### AI & Full-Stack Developer | Automation Enthusiast
+### AI Automation Developer | Workflow Optimization | Business Impact  
 
-I build AI-powered workflows and scalable web applications to help businesses automate repetitive tasks and generate revenue.
+I build AI-powered systems that eliminate repetitive work, automate processes, and generate measurable results for high-growth teams. 
 
 ---
 
