@@ -1,9 +1,13 @@
 # Hi there, I'm Hetavi Gheewala 👋
-🌐 [Portfolio](https://hg-portfolio-5cd6cfa.netlify.app/)  
-🔗 [LinkedIn](www.linkedin.com/in/hetavi-gheewala-ab6b112b4)
+
 ### AI & Full-Stack Developer | Automation Enthusiast
 
 I build AI-powered workflows and scalable web applications to help businesses automate repetitive tasks and generate revenue.
+
+---
+
+🌐 **Portfolio:** [hg-portfolio](https://hg-portfolio-5cd6cfa.netlify.app/)  
+🔗 **LinkedIn:** [Hetavi Gheewala](https://www.linkedin.com/in/hetavi-gheewala-ab6b112b4)
 
 ---
 
