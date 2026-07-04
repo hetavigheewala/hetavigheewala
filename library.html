@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | Media Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 15, 16, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dropzone-dash {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23AD8789FF' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 12px;
+        }
+        .media-card-hover:hover .hover-overlay {
+            opacity: 1;
+        }
+        .media-card-hover:hover {
+            box-shadow: 0 0 30px rgba(255, 178, 182, 0.2);
+            transform: scale(1.02);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f0f10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #442f30;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb2b6;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#68001a",
+                    "error-container": "#93000a",
+                    "on-secondary": "#412d00",
+                    "surface-container-high": "#392526",
+                    "on-primary-fixed": "#40000d",
+                    "surface-container": "#2d1b1c",
+                    "on-secondary-container": "#382700",
+                    "primary": "#ffb2b6",
+                    "secondary-container": "#b88921",
+                    "surface-bright": "#493435",
+                    "tertiary": "#74d8be",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed": "#271900",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#be0038",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdada",
+                    "outline-variant": "#5d3f40",
+                    "inverse-surface": "#fcdbdb",
+                    "on-tertiary-fixed": "#002019",
+                    "on-tertiary-fixed-variant": "#005142",
+                    "on-primary-fixed-variant": "#920028",
+                    "on-surface-variant": "#e6bcbe",
+                    "tertiary-container": "#00836d",
+                    "primary-container": "#e50946",
+                    "tertiary-fixed-dim": "#74d8be",
+                    "primary-fixed-dim": "#ffb2b6",
+                    "on-primary-container": "#fffaf9",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "outline": "#ad8789",
+                    "surface-container-lowest": "#190a0b",
+                    "secondary": "#f3be53",
+                    "surface-container-low": "#291718",
+                    "on-tertiary": "#00382d",
+                    "secondary-fixed-dim": "#f3be53",
+                    "secondary-fixed": "#ffdea5",
+                    "on-background": "#fcdbdb",
+                    "surface-dim": "#1f0f10",
+                    "on-surface": "#fcdbdb",
+                    "surface-variant": "#442f30",
+                    "surface-container-highest": "#442f30",
+                    "on-tertiary-container": "#eefff8",
+                    "surface-tint": "#ffb2b6",
+                    "inverse-on-surface": "#402b2c",
+                    "background": "#1f0f10",
+                    "tertiary-fixed": "#91f5da",
+                    "surface": "#1f0f10"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "container-margin": "5vw"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Bebas Neue"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Bebas Neue"],
+                    "headline-lg": ["Bebas Neue"],
+                    "label-sm": ["Inter"],
+                    "display-hero": ["Bebas Neue"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-[5vw] py-md w-full">
+<a href="index.html" class="font-headline-lg text-headline-lg text-primary tracking-widest hover:scale-105 transition-transform duration-300 cursor-pointer block">
+                Cherish
+            </a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="memories.html">Browse</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="dashboard.html">My Memories</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="library.html">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="memories.html">Timeline</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-all duration-300 material-symbols-outlined" data-icon="search">search</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant hover:border-primary transition-all cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A professional high-fashion portrait of a creative individual with warm, cinematic lighting. The subject has an expressive face, set against a dark, moody background with subtle rose-colored rim lighting. The style is modern, sleek, and high-production quality, consistent with a premium streaming platform aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmLnwugAtutkd3ygw-32XBROuYCUQ_da68EAgmiN9p3J-cJFC1iLZoPuteWo1fCb4qhukRUPLZc7IRxTL4xiW5e7x3z1yKcCPE0ieTXjt2uP1sDlIEgsooSD0gBi8_IPAxFK6_pAJX3EZ78p6YRbVl88vZYQwSBqU2TU8Un04RnoL-tiZzDSepIV7QKCoe_xdZJfCKMcccAJZwyZJsvcqbeYQf93I0CbFBhlMA8DWB85I3bfJzfT4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-xl px-[5vw]">
+<!-- Header & Storage Info -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Media Library</h1>
+<p class="text-on-surface-variant font-body-md">Manage your uploaded moments and creative assets.</p>
+</div>
+<div class="flex flex-col items-end gap-xs w-full md:w-auto">
+<div class="flex justify-between w-full md:w-64 mb-1">
+<span class="text-label-sm font-label-sm uppercase text-on-surface-variant">Storage</span>
+<span class="text-label-sm font-label-sm uppercase text-primary">12.4 GB / 50 GB</span>
+</div>
+<div class="w-full md:w-64 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 24.8%;"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant/60 mt-1 italic">Provisional workspace storage</p>
+</div>
+</div>
+<!-- Large Dropzone -->
+<section class="mb-lg">
+<div class="dropzone-dash w-full min-h-[240px] flex flex-col items-center justify-center p-lg transition-all duration-300 hover:bg-surface-container-low cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(255,178,182,0.1)]">
+<span class="material-symbols-outlined text-4xl" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Drag & Drop Media</h3>
+<p class="text-on-surface-variant font-body-md">Support for high-resolution JPG, PNG, MP4, and RAW files</p>
+<div class="mt-md px-lg py-sm bg-primary text-on-primary font-bold rounded-lg hover:shadow-[0_0_40px_rgba(255,178,182,0.4)] transition-all">
+                    Browse Files
+                </div>
+</div>
+</section>
+<!-- Active Upload Status -->
+<section class="mb-lg">
+<div class="bg-surface-container-high p-md rounded-xl flex items-center gap-md border border-outline-variant/30">
+<div class="w-16 h-12 bg-surface-container-highest rounded flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="video_file">video_file</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-2">
+<span class="font-body-md font-semibold text-on-surface">Summer_Vibe_Reel_2024.mp4</span>
+<span class="text-label-sm font-label-sm text-primary">78%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 78%;"></div>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" data-icon="cancel">cancel</button>
+</div>
+</section>
+<!-- Filters -->
+<nav class="flex items-center gap-md mb-md border-b border-outline-variant/20 overflow-x-auto pb-1">
+<button class="px-md py-sm font-headline-md text-headline-md text-primary border-b-2 border-primary whitespace-nowrap">All</button>
+<button class="px-md py-sm font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Photos</button>
+<button class="px-md py-sm font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Videos</button>
+<button class="px-md py-sm font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Favorites</button>
+</nav>
+<!-- Media Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter">
+<!-- Media Card 1 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A cinematic vertical shot of a person walking through a misty forest at dawn. The color palette is dominated by deep greens and earthy tones, with a soft rose glow filtering through the trees. The composition is artistic and minimalist, emphasizing atmosphere and scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt2OQS_RT4RzyprX56RcWIC0gqF70c9IyaL3h0hphGLn-5YxFBhRmOh3HFilKO8j5NrLZqM2W5YaTgeWCW3vi_YZXD49JUzOJVvFrhrbwxA7ip3MQ7rh434IlQbAAR_hRiktDNKrA08Xw9ZjjkkB2bK_ZxpK3-lVhTH3gQ-csjYewnCFX0056cvtzQKlHCLa9Xw1UbnX5SONWEWVSODulGy0pw8vabAmE4bNdkI8ayqQ8EO95zn74"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Forest_Mist.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 2 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A dramatic close-up of neon city lights reflecting in a rain-slicked street at night. Deep blues and blacks are punctuated by sharp rose-red and amber neon glows. The image has a cinematic noir aesthetic with high contrast and shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBShx-KA4OHrxpKELVZRSh3HCQXneP-woVB3A_ilDczhJHu8dFx8Ci94AYh0LhDCOAYMV7ixVWLH0Ys4cT9pEpj8LUPmDSS-1h2gBR1cdHXQJkIaPoVJWN5_wKOWjYc3Z-RcQMZYXpucq8x1DYHlO2I8p00EImj48Yu6hYPJ2hITYdcxHbcJMiCYCh0uXxuudyx4jyjbVrHf8HLQY9tz6qU5RupfyPSQ1T5kAMing0QFV3XWfCQkJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Night_Neon.mp4</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+<div class="absolute top-2 right-2 p-1 rounded bg-black/40 backdrop-blur-md text-white">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<!-- Media Card 3 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A minimalist architectural shot of a brutalist concrete building against a stark, dark gray sky. Strong shadows and geometric shapes define the composition. The overall mood is cold and sophisticated, with a single rose-red element providing a sharp focal point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFuC_8HeNMq7QVkZ4c2H1XuM9woQPAmYbi6fdoFPK2BsOgZWKn9DLVQx_mOlfjnbAXT4w580pvJuS0oiFUw-7wjf8tMQh3F5P7w53xOisAm8Vuc6SsaR1PpaStt-YwkJS4rlGJKPgFQma8IsrYspCY6lvD8VSXPrui7IHMrq1GTflrBTTyDtRGZDNzpOnnKMXZET_uknXnxvsVvDedBoNFWJWRtNkAozkTWZkAKoqEVI1F10lCr1Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Structure_01.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 4 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A high-contrast black and white portrait of an elderly man with deep wrinkles, his face partially shrouded in shadow. One side of his face is caught in a warm, cinematic light. The style is raw, emotional, and timeless, reminiscent of classic documentary photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoR1Q73Bpxuy-9wayvfudTdLslOSjlizNFq8F3Qm8f5iQaM1nMmmTD_MEMpncBatNGGVDszW0tI6dtJPpHftxrpno2xlzOAz-pSKDe4HZteCQ_t18CLBcgp8sj-FEDWkldIDR1N7v043m96Xc3APZQV1wg-KbuhgUIt-Nl1atzHdssFlJjSg7e69MW5qEBitVzlfjPE5MnhsrPw2ez_z4Y3GMcBZxf6oNQMuOdlCQBfYVTUAgtr6s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Wisdom_Portrait.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 5 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="An ethereal underwater shot of a woman in a flowing red dress, surrounded by bubbles and shimmering light. The background is a deep, velvety indigo. The image is dreamy and surreal, with a powerful sense of movement and elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1WjlEzgoBViKDqIyVHExFTbDsAJUYrX8SzTrbj2gjPHH8xNztzfs219V7WFBIBEN1jztuVO8orNeVuAWhacpnvLynyFqYs8Et-nJ00L98ngnQmwCHhUyY2mIApNqETkIyKoXKCS7BOdytQiKolNch38bLKf02_p0bUxWOuOZ3eatPo3WfczMQ443RdR-4U_7xIrTlv0cwIaorxhBYG9ZOkJ6Gw_WPKexF6A5Fi0Vd7q3yx5NseVg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Under_Red.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 6 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A warm, intimate shot of two hands holding coffee cups over a dark wooden table. A window nearby casts a soft, cinematic morning light across the scene. The mood is cozy and nostalgic, emphasizing connection and quiet moments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNO1eUC7AT54UCrbY2YdAJmliH6cX2T4Po8jA2Ho7EBIXEr7m0L-9I8nbfq8gORYR2pM_i6TiYeIySfFGokIalmjiaxoHxLe7c83ieRKUEjgHv4tFfOqayRBwDg1vMAFxXjZwZ4rEVRag-DBBc3jI47G8F5xDYxcXMLamMBLr2Rb-JoiIk50EHUKLFiPCld71NhA3486kFSIuDFHxJz4c8iwA3FPIXZ45Z2Kb2yAR5gI6wQSuo6f0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Coffee_Morning.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 7 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A wide-angle cinematic landscape of a desert at sunset. The sand dunes create flowing, rhythmic lines across the frame. The sky is a gradient of deep orange and purple, with long shadows stretching across the landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcW8__qRoTwOe0-K-BElP9Q3vY9DofBFPYZC0mCkw1RpyXcwCc2vZJPQB60L9kxH1Q45I7KUgLXF2Uu3FZfgjdAebp2VdW0UvaqGLNyTPJjzhKx5GlRhDr_ZoTmEcnh5rCo-z1I9LakKZtE4dseeq372Cr2Tzu_anyYx5Yco2tN01JxUsSU9HN-cQVYq0rdWjF4UN_zirZjfCOqr9_pZhwfY0vEtfuyAGl1OYE5MqLIrwR-YW6ADk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Dune_Shadows.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+<!-- Media Card 8 -->
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden media-card-hover transition-all duration-300 group">
+<img class="w-full h-full object-cover bg-surface-container" data-alt="A macro shot of a single flower petal covered in morning dew. The petal is a vibrant rose-red, and the water droplets act like tiny lenses, reflecting the surrounding environment. The lighting is soft and diffused, highlighting the delicate textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlltaIXsB8jI133f9zfwX_eTu7RZsnWbwWk-T8Op_0-w4ceuB7NaHrUS1BgiRcP4TwniUWdh7vkV_cZvQMFACUEfrdrp00M1H2tKAX6U5ikOJw39ctsIMJfH2pSUp_wygVP9fGTzzsjG1QZix7rvfrKp_0nwllu3HMdPfEZZ9pHLZAe3XAyGu2-ZvtVmUuR4kabrXDXCTokbxFlmR-5fAhBwxpx8FarOo6ZfY6p2qJ4VMHEhVriB0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-md hover-overlay">
+<p class="text-label-sm font-label-sm text-white truncate mb-base">Dew_Detail.jpg</p>
+<div class="flex gap-xs">
+<button class="flex-1 bg-white/20 backdrop-blur-md py-1 rounded hover:bg-primary hover:text-on-primary transition-all text-[10px] font-bold uppercase tracking-wider">Use</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-white/40 transition-all material-symbols-outlined text-sm" data-icon="crop">crop</button>
+<button class="p-1 bg-white/20 backdrop-blur-md rounded hover:bg-error transition-all material-symbols-outlined text-sm" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading Indicator for pagination -->
+<div class="flex justify-center mt-xl">
+<button class="flex items-center gap-base text-on-surface-variant hover:text-primary transition-all group">
+<span class="material-symbols-outlined animate-spin group-hover:scale-110" data-icon="autorenew">autorenew</span>
+<span class="font-label-sm uppercase tracking-widest">Load More Media</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-lg border-t border-outline-variant bg-surface-dim dark:bg-surface-dim flex flex-col items-center gap-md py-xl px-[5vw] text-center">
+<div class="font-headline-md text-headline-md text-primary">Cherish</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md" href="#">About Us</a>
+</div>
+<p class="text-on-surface-variant opacity-80 hover:opacity-100 transition-all font-body-md">Everything for free. Cherish © 2024</p>
+</footer>
+<script>
+        // Simple micro-interaction for the dropzone
+        const dropzone = document.querySelector('.dropzone-dash');
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('bg-surface-container-highest');
+        });
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('bg-surface-container-highest');
+        });
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('bg-surface-container-highest');
+            alert('File drop detected. Processing uploads...');
+        });
+    </script>
+</body></html>

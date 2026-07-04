@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | Memory Tile Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#68001a",
+            "error-container": "#93000a",
+            "on-secondary": "#412d00",
+            "surface-container-high": "#392526",
+            "on-primary-fixed": "#40000d",
+            "surface-container": "#2d1b1c",
+            "on-secondary-container": "#382700",
+            "primary": "#ffb2b6",
+            "secondary-container": "#b88921",
+            "surface-bright": "#493435",
+            "tertiary": "#74d8be",
+            "error": "#ffb4ab",
+            "on-secondary-fixed": "#271900",
+            "on-error-container": "#ffdad6",
+            "inverse-primary": "#be0038",
+            "on-error": "#690005",
+            "primary-fixed": "#ffdada",
+            "outline-variant": "#5d3f40",
+            "inverse-surface": "#fcdbdb",
+            "on-tertiary-fixed": "#002019",
+            "on-tertiary-fixed-variant": "#005142",
+            "on-primary-fixed-variant": "#920028",
+            "on-surface-variant": "#e6bcbe",
+            "tertiary-container": "#00836d",
+            "primary-container": "#e50946",
+            "tertiary-fixed-dim": "#74d8be",
+            "primary-fixed-dim": "#ffb2b6",
+            "on-primary-container": "#fffaf9",
+            "on-secondary-fixed-variant": "#5d4200",
+            "outline": "#ad8789",
+            "surface-container-lowest": "#190a0b",
+            "secondary": "#f3be53",
+            "surface-container-low": "#291718",
+            "on-tertiary": "#00382d",
+            "secondary-fixed-dim": "#f3be53",
+            "secondary-fixed": "#ffdea5",
+            "on-background": "#fcdbdb",
+            "surface-dim": "#1f0f10",
+            "on-surface": "#fcdbdb",
+            "surface-variant": "#442f30",
+            "surface-container-highest": "#442f30",
+            "on-tertiary-container": "#eefff8",
+            "surface-tint": "#ffb2b6",
+            "inverse-on-surface": "#402b2c",
+            "background": "#1f0f10",
+            "tertiary-fixed": "#91f5da",
+            "surface": "#1f0f10"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xl": "80px",
+            "gutter": "24px",
+            "sm": "12px",
+            "md": "24px",
+            "base": "8px",
+            "xs": "4px",
+            "lg": "48px",
+            "container-margin": "5vw"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Bebas Neue"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Bebas Neue"],
+            "headline-lg": ["Bebas Neue"],
+            "label-sm": ["Inter"],
+            "display-hero": ["Bebas Neue"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+            "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0A0A0B; /* Deep True Streaming Dark */
+      color: #fcdbdb;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .rose-glow {
+      box-shadow: 0 0 20px rgba(229, 9, 70, 0.4);
+    }
+    .rose-glow-hover:hover {
+      box-shadow: 0 0 40px rgba(229, 9, 70, 0.6);
+      transform: scale(1.02);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Focal point indicator */
+    .focal-target {
+      border: 2px dashed rgba(255, 178, 182, 0.6);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30">
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 flex justify-between items-center px-[5vw] py-md w-full">
+<a href="index.html" class="font-headline-lg text-headline-lg text-primary tracking-widest uppercase">Cherish</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="memories.html">Browse</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline-md text-headline-md" href="dashboard.html">My Memories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="library.html">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="memories.html">Timeline</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:scale-105 transition-transform duration-300">search</button>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional circular profile avatar of a person with warm studio lighting, styled in a minimalist, high-end cinematic aesthetic. The background is a soft, deep charcoal that complements the Rose-red and gold theme of the Cherish interface. The image evokes a sense of premium membership and personal storytelling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDASZyGFCsvFxS1N2B3glCWqVADRmvFC0_BSrEptMaqvJF2b6Fw39fHVJ41GHnWwLkMRMoio4y633nsIPEIYzuyc1b7m7wOw0RtZXGMhpqXC8e5XPM-x9FsDixhnDRx_X50Byk8quMl-1Y7OEDZBe030SJjmiHw0D-eMApsL8C0PXX1bIHIS2SVbZ29IktliDbLjE36ukLhsbKhXZ7IFIz-9vh3QGXi1kXvzwntb8jw8m5_obc7938"/>
+</div>
+</nav>
+<!-- Editor Layout -->
+<main class="pt-xl min-h-screen flex">
+<!-- Left: Canvas (Contextual Background) -->
+<section class="flex-1 p-lg bg-surface-container-lowest flex items-center justify-center relative overflow-hidden">
+<!-- Animated Background Element -->
+
+<div class="relative z-10 w-full max-w-4xl aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 flex items-center justify-center bg-surface-dim">
+<div class="text-center space-y-md p-lg">
+<span class="material-symbols-outlined text-primary text-[64px]" style="font-variation-settings: 'FILL' 1;">movie_edit</span>
+<h2 class="font-headline-lg text-headline-lg">Main Editor Workspace</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">This canvas represents your active timeline. Select a memory tile to edit its properties in the configuration panel on the right.</p>
+</div>
+</div>
+</section>
+<!-- Right Side Panel: Tile Editor -->
+<aside class="w-[420px] h-screen fixed right-0 top-0 pt-xl bg-surface-container-high shadow-2xl border-l border-outline-variant/50 flex flex-col z-40">
+<div class="flex-1 overflow-y-auto hide-scrollbar p-md space-y-md">
+<!-- Preview Section -->
+<div class="space-y-sm">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Live Preview</label>
+<div class="relative w-full aspect-[2/3] rounded-xl overflow-hidden group rose-glow border border-primary/20">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" data-alt="A stunning cinematic film poster capturing a romantic sunset over a calm lake. Two silhouetted figures stand on a wooden dock, bathed in soft golden and rose-red light. The style is modern minimalist noir, with high contrast and deep, layered shadows. The image feels warm, exclusive, and deeply emotional, mirroring the Cherish brand identity." id="preview-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8JNxsPiO5UlWlK9LZrGfbSf5G29dLxrYZz3F4XMYL60vwGnLhdflaOU7FZph8rvx4d65IPIHrdmyFPBlGVuk3mkPN4GcKB9_gMDVc-IMJoIY_7j3FFbR1Ku4Vkwrq-323wZ3b7-VJa8pSjkIru-Id2EG5kC27oUDktHMZpE7SZ1PLdZik5LOY_ZUDhA5QegIcqXCqcV3cpER3gONCUAJ_14LhHMPjrg7tJjHUjkNBCVXXlAVuIP8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<!-- Focal Point Target Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="focal-target w-24 h-24 flex items-center justify-center">
+<div class="w-1 h-1 bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Dynamic Badge Preview -->
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm shadow-lg" id="badge-preview">100% US</div>
+<!-- Content Preview Overlay -->
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-white mb-1" id="preview-title">Golden Hour Memories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" id="preview-synopsis">A day we'll never forget by the lakeside, watching the sky turn into a canvas of pink and gold.</p>
+</div>
+</div>
+<button class="w-full py-base bg-surface-variant hover:bg-outline-variant transition-colors flex items-center justify-center gap-base rounded-lg border border-outline-variant/50" onclick="window.location.href='library.html'">
+<span class="material-symbols-outlined text-sm">image_search</span>
+<span class="font-label-sm text-label-sm">Swap Media Asset</span>
+</button>
+</div>
+<!-- Focal Point / Zoom -->
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Focal Point &amp; Zoom</label>
+<span class="text-primary font-label-sm text-label-sm">1.2x</span>
+</div>
+<input class="w-full accent-primary h-1 bg-surface-container rounded-full appearance-none cursor-pointer" max="2" min="1" step="0.1" type="range" value="1.2"/>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Input Section -->
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Memory Title</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md text-body-md focus:border-primary outline-none transition-all" id="input-title" type="text" value="Golden Hour Memories"/>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Synopsis</label>
+<button class="text-primary flex items-center gap-xs font-label-sm text-label-sm hover:underline">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                Suggest with AI
+              </button>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md text-body-md focus:border-primary outline-none transition-all resize-none" id="input-synopsis" rows="4">A day we'll never forget by the lakeside, watching the sky turn into a canvas of pink and gold.</textarea>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Metadata -->
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">calendar_today</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg pl-10 py-sm text-body-md focus:border-primary outline-none" type="text" value="Aug 24, 2023"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">location_on</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg pl-10 py-sm text-body-md focus:border-primary outline-none" type="text" value="Lake Como"/>
+</div>
+</div>
+</div>
+<!-- Badge Picker -->
+<div class="space-y-sm badge-picker">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Select Badge</label>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-xs rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm border-2 border-primary">100% Us</button>
+<button class="px-md py-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant hover:border-primary transition-all">Just Added</button>
+<button class="px-md py-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant hover:border-primary transition-all">Top Hit</button>
+<button class="px-md py-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant hover:border-primary transition-all">Essential</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-md bg-surface-container-highest/50 border-t border-outline-variant/50 grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-base py-md rounded-lg border-2 border-on-surface-variant text-on-surface-variant font-headline-md text-headline-md hover:bg-on-surface-variant/10 transition-all uppercase">
+<span class="material-symbols-outlined">delete</span>
+          Delete
+        </button>
+<button class="flex items-center justify-center gap-base py-md rounded-lg bg-primary-container text-on-primary-container font-headline-md text-headline-md rose-glow-hover transition-all uppercase" onclick="window.location.href='editor.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Done
+        </button>
+</div>
+</aside>
+</main>
+<!-- Footer (Suppressed for focused editor, but keeping logic structure) -->
+<footer class="bg-surface-dim dark:bg-surface-dim w-full mt-lg border-t border-outline-variant flex flex-col items-center gap-md py-xl px-[5vw] text-center relative z-10">
+<div class="font-headline-md text-headline-md text-primary uppercase">Cherish</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">About Us</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Everything for free. Cherish © 2024</p>
+</footer>
+<script>
+    // Live update preview logic
+    const titleInput = document.getElementById('input-title');
+    const synopsisInput = document.getElementById('input-synopsis');
+    const previewTitle = document.getElementById('preview-title');
+    const previewSynopsis = document.getElementById('preview-synopsis');
+
+    titleInput.addEventListener('input', (e) => {
+      previewTitle.textContent = e.target.value || 'Untitled Memory';
+    });
+
+    synopsisInput.addEventListener('input', (e) => {
+      previewSynopsis.textContent = e.target.value || 'Add a beautiful story to this memory...';
+    });
+
+    // Handle Badge selection visual toggle
+    const badgeButtons = document.querySelectorAll('.badge-picker button');
+    badgeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        badgeButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container', 'border-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant', 'border-outline-variant');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'border-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant', 'border-outline-variant');
+        document.getElementById('badge-preview').textContent = btn.textContent.trim();
+      });
+    });
+  </script>
+</body></html>

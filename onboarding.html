@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | Building Your Premiere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .rose-glow:hover {
+            box-shadow: 0 0 40px rgba(229, 9, 70, 0.4);
+        }
+        .glass-panel {
+            background: rgba(25, 10, 11, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(230, 188, 190, 0.1);
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-effect::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 178, 182, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+        .progress-line {
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#68001a",
+                        "error-container": "#93000a",
+                        "on-secondary": "#412d00",
+                        "surface-container-high": "#392526",
+                        "on-primary-fixed": "#40000d",
+                        "surface-container": "#2d1b1c",
+                        "on-secondary-container": "#382700",
+                        "primary": "#ffb2b6",
+                        "secondary-container": "#b88921",
+                        "surface-bright": "#493435",
+                        "tertiary": "#74d8be",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#271900",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#be0038",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdada",
+                        "outline-variant": "#5d3f40",
+                        "inverse-surface": "#fcdbdb",
+                        "on-tertiary-fixed": "#002019",
+                        "on-tertiary-fixed-variant": "#005142",
+                        "on-primary-fixed-variant": "#920028",
+                        "on-surface-variant": "#e6bcbe",
+                        "tertiary-container": "#00836d",
+                        "primary-container": "#e50946",
+                        "tertiary-fixed-dim": "#74d8be",
+                        "primary-fixed-dim": "#ffb2b6",
+                        "on-primary-container": "#fffaf9",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "outline": "#ad8789",
+                        "surface-container-lowest": "#190a0b",
+                        "secondary": "#f3be53",
+                        "surface-container-low": "#291718",
+                        "on-tertiary": "#00382d",
+                        "secondary-fixed-dim": "#f3be53",
+                        "secondary-fixed": "#ffdea5",
+                        "on-background": "#fcdbdb",
+                        "surface-dim": "#1f0f10",
+                        "on-surface": "#fcdbdb",
+                        "surface-variant": "#442f30",
+                        "surface-container-highest": "#442f30",
+                        "on-tertiary-container": "#eefff8",
+                        "surface-tint": "#ffb2b6",
+                        "inverse-on-surface": "#402b2c",
+                        "background": "#1f0f10",
+                        "tertiary-fixed": "#91f5da",
+                        "surface": "#1f0f10"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "container-margin": "5vw"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "label-sm": ["Inter"],
+                        "display-hero": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-[5vw] py-md">
+<a href="index.html" class="font-headline-lg text-headline-lg text-primary tracking-widest uppercase">Cherish</a>
+<div class="hidden md:flex items-center gap-md">
+<span class="text-on-surface-variant font-label-sm uppercase tracking-widest">Step 3 of 4</span>
+<div class="h-1 w-32 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="progress-line h-full bg-primary-container w-3/4"></div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center pt-xl pb-lg px-[5vw] relative">
+<!-- Atmospheric Background Shader Placeholder -->
+
+<div class="w-full max-w-5xl z-10 space-y-lg">
+<!-- Active State Heading -->
+<div class="text-center space-y-sm">
+<h2 class="font-display-hero text-display-hero text-on-surface leading-none">Building your premiere...</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We're tailoring a cinematic experience that captures your unique journey. Almost there.</p>
+</div>
+<!-- Bento Grid Onboarding Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- 1. Occasion Selection (Large Column) -->
+<section class="md:col-span-4 glass-panel p-md rounded-xl space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary">The Occasion</h3>
+<div class="flex flex-col gap-sm">
+<button class="flex items-center justify-between p-md rounded-lg bg-surface-container-high border-2 border-primary-container transition-all rose-glow">
+<span class="font-body-md font-bold">Wedding</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="flex items-center justify-between p-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all">
+<span class="font-body-md">Anniversary</span>
+<span class="material-symbols-outlined text-on-surface-variant">celebration</span>
+</button>
+<button class="flex items-center justify-between p-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all">
+<span class="font-body-md">Just Us</span>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</button>
+</div>
+</section>
+<!-- 2. Names & Title (Right Top) -->
+<section class="md:col-span-8 glass-panel p-md rounded-xl space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary">Premiere Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-sm text-on-surface-variant uppercase">Your Names</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary rounded-lg p-md text-on-surface placeholder:text-surface-variant" placeholder="e.g., Sarah &amp; Alex" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-on-surface-variant uppercase">Film Title</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary rounded-lg p-md text-on-surface placeholder:text-surface-variant" placeholder="e.g., A Lifetime of Us" type="text"/>
+</div>
+</div>
+<!-- 3. Drag and Drop First Uploads -->
+<div class="mt-md">
+<label class="font-label-sm text-on-surface-variant uppercase block mb-xs">First Scenes (Photos/Videos)</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-lg flex flex-col items-center justify-center gap-sm bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 200;">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="font-body-md text-on-surface">Drag and drop your favorites</p>
+<p class="font-label-sm text-on-surface-variant">Support for High-Bitrate 4K</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Theme Picker (Full Width) -->
+<section class="md:col-span-12 glass-panel p-md rounded-xl space-y-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-primary">Select Visual Tone</h3>
+<span class="font-label-sm text-on-surface-variant uppercase">All Themes Included Free</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-sm overflow-x-auto pb-base">
+<!-- Theme Card 1: Rose Noir -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-primary-container rose-glow transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A moody cinematic movie poster style preview for a romance theme named Rose Noir. The image shows a couple in a silhouette against a deep red and black sunset, with fine grain texture and elegant serif typography. The lighting is low-key, dramatic, and luxurious, fitting a dark mode UI." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJ3VI7qprdbVbPc2rfY-UwEF2jhyAB3y62RhXE_r7NCWFCv4eMM4YzZTB3VCDcC0f3Ehgp17FFOSm67hBBaNt1cllgFlM8GheK00DTpITvZglYgVnru8RWIqiGBYfwJiEAE0EeOr9usa9AhFgmzpqh5hQWuZgceNL0GyNkYe-9Pb8rGXZhXiYPEuYJx1JJBMvR47YxE_yTMpq-ohi9dkRSBGKTKLfRDQEYTM3GU0LJH2gCq-zMSMo')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface uppercase">Rose Noir</p>
+<p class="text-[10px] text-primary">Selected</p>
+</div>
+</div>
+<!-- Theme Card 2: Midnight Gold -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-transparent hover:border-secondary transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A luxurious cinema theme preview titled Midnight Gold. The scene depicts a celebratory black-tie event with bokeh golden lights in the background and a warm, glowing atmosphere. The colors are deep blacks and vibrant golds, suggesting high production value and timeless elegance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3-B45puJh0tUoXjBqGRe_vx90pvSKUuqXlmcK0bICFtWTlzdAJINb6AjUlpw7jrVVThgE6Mm53XVncMFgBJJbbOGOh4Juj509-gGaqXmV5B-AeUknb-9R1HJKmqRQINSSjDG7f1_IoV7sjPG4FwIwg5vqpxukdR-aeJQHH_0jQMWhxZVa-qHhJTUEdYYNGA38wAwOv55N8NazrXQJUsW0xlue5JUkKt93aWl9NBRP8Ku6FC0aHsc')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface-variant group-hover:text-on-surface uppercase transition-colors">Midnight Gold</p>
+</div>
+</div>
+<!-- Theme Card 3: Ocean -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-transparent hover:border-tertiary transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A serene cinematic theme preview titled Ocean. The visuals feature soft teal and deep navy blue tones with a couple walking on a foggy beach at twilight. The style is minimalist and calm, utilizing cool tones to evoke a sense of peaceful and enduring love." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnn73V9THh3yNmZ4sr1zUOuc8HTRzCuhqC_dL9uYtJXM3jb8vt9yYopLoKORkOQRaW-_m1HtXwGSzSRh6cDbSE7XuovohtvMW5sV3vXnc15o7KAIdwKFC69lY23-iguxPFqFt_ImJabZsesVpA1_RCCzUT7qYAM2mcB6-3HtbAzGHTTXCeHnKLNVOgjPMw-1HgGBl3RPx3ds21xvdrWGwriyiangVP3IDuYI5N66jXsHdeB1uIKnY')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface-variant group-hover:text-on-surface uppercase transition-colors">Ocean</p>
+</div>
+</div>
+<!-- Theme Card 4: Sunset -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-transparent hover:border-orange-400 transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A warm cinematic theme preview titled Sunset. The image captures a golden hour moment with vibrant orange and magenta light spilling across a grassy field. It has a nostalgic, film-like quality with high-production lens flares and a heart-warming, romantic feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhGF4Jdo3g4F2_1gpn-zzl3mUgfh3-HXTruZFvX7JwP65Xs5Kd4gS4auvVI7b6KVRKvYVMuWgavhcqnMRO0OrkqbEzR5J3GN1lv3hV0fgERMtLS8ct1Nefcs6nSUN_t0WurPu8rnjr8iA9D4dw0-o9W9ECJlbV12bRZu7k51c6aw1LipkpqLywJoANuiv8E-KUci51VQtUeah-pT_OGy5pbmpyh8StsHsWdOSMWsVrzdT-xKJUr4o')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface-variant group-hover:text-on-surface uppercase transition-colors">Sunset</p>
+</div>
+</div>
+<!-- Theme Card 5: Lavender -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-transparent hover:border-purple-400 transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A soft and dreamy cinematic theme preview titled Lavender. The aesthetic features pale purple and misty grey tones, depicting an ethereal garden setting. The lighting is soft and diffused, creating a fairy-tale atmosphere that feels light, airy, and deeply romantic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAujNsd4dq5bkqRd6eAeCr1tDfk8emP6pDEiHFZW5fr_fO6JkwmXWXhXryUE2fmTdKPQvqaawYNbspHTPdzRj8bq51zmzrzlTRwDSySh4pGOHJVtDQu-xlrmv04eUaIqjxFBI8C2buCbwlSF_llTEMqyst2LR9AtPTJ6PZbdQSaD3dfxWP6tCheXJTu6yGJ0jJr2_XmWkbSgvDwH-sRvvsoGIQshFRAKotl6IqL-j2aL3QibVRPYJQ')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface-variant group-hover:text-on-surface uppercase transition-colors">Lavender</p>
+</div>
+</div>
+<!-- Theme Card 6: Mono -->
+<div class="relative group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border-2 border-transparent hover:border-white transition-all">
+<div class="w-full h-full bg-cover bg-center" data-alt="A classic black and white cinematic theme preview titled Mono. The high-contrast noir style highlights textures and light patterns, showing a candid, intimate moment between a couple. It feels timeless, artistic, and emphasizes emotional depth through shadows and highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCac-mbznVy-nq0nD3AB0xDncngWRo6nU5fDfhBTHsKpzTaPLNPtl4URPSolUpaIUv5sZEsFHNkaRK73_nKTPUYCivo3ulmh-Iyb5Arz5ohC16hEXZ07l4L8pT0ffVXU0-u07GNla35Pu8Y9VFRQ_-L2fkPMlXg9PKjoagS9_SaF2RAD8g80puVhE3h7LrsiLQ6vLbaWVFvrLTRi3cZUD8ZZxsVQ6lTsN0cbSZR2p-G4XrgrfSQebo')"></div>
+</div>
+<div class="mt-xs text-center">
+<p class="font-label-sm text-on-surface-variant group-hover:text-on-surface uppercase transition-colors">Mono</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Navigation Footer -->
+<footer class="w-full bg-surface-dim border-t border-outline-variant py-xl px-[5vw] flex flex-col items-center gap-md text-center mt-auto">
+<div class="flex flex-row justify-between w-full max-w-5xl items-center">
+<a class="text-on-surface-variant hover:text-primary transition-all underline font-body-md opacity-80 hover:opacity-100" href="dashboard.html">
+                Skip for now
+            </a>
+<div class="flex gap-md">
+<a class="px-xl py-md rounded-full bg-primary-container text-on-primary-container font-headline-md rose-glow transition-all active:scale-95 flex items-center gap-sm" href="dashboard.html">
+                    Next Step
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mt-md">Everything for free. Cherish © 2024</p>
+<div class="flex gap-md mt-sm">
+<a class="font-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
+</div>
+</footer>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme selection logic
+            const themeCards = document.querySelectorAll('.group.cursor-pointer');
+            themeCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Reset all
+                    themeCards.forEach(c => {
+                        const container = c.querySelector('div:first-child');
+                        container.classList.remove('border-primary-container', 'rose-glow');
+                        container.classList.add('border-transparent');
+                        const label = c.querySelector('.text-primary');
+                        if (label) label.remove();
+                    });
+
+                    // Set active
+                    const container = card.querySelector('div:first-child');
+                    container.classList.remove('border-transparent');
+                    container.classList.add('border-primary-container', 'rose-glow');
+
+                    const labelContainer = card.querySelector('div:last-child');
+                    const selectedLabel = document.createElement('p');
+                    selectedLabel.className = 'text-[10px] text-primary';
+                    selectedLabel.innerText = 'Selected';
+                    labelContainer.appendChild(selectedLabel);
+                });
+            });
+
+            // Smooth progress line simulation
+            setTimeout(() => {
+                const bar = document.querySelector('.progress-line');
+                if (bar) bar.style.width = '75%';
+            }, 500);
+        });
+    </script>
+</body></html>

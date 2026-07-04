@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | Your Love Story, Now Streaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#68001a",
+                    "error-container": "#93000a",
+                    "on-secondary": "#412d00",
+                    "surface-container-high": "#392526",
+                    "on-primary-fixed": "#40000d",
+                    "surface-container": "#2d1b1c",
+                    "on-secondary-container": "#382700",
+                    "primary": "#ffb2b6",
+                    "secondary-container": "#b88921",
+                    "surface-bright": "#493435",
+                    "tertiary": "#74d8be",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed": "#271900",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#be0038",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdada",
+                    "outline-variant": "#5d3f40",
+                    "inverse-surface": "#fcdbdb",
+                    "on-tertiary-fixed": "#002019",
+                    "on-tertiary-fixed-variant": "#005142",
+                    "on-primary-fixed-variant": "#920028",
+                    "on-surface-variant": "#e6bcbe",
+                    "tertiary-container": "#00836d",
+                    "primary-container": "#e50946",
+                    "tertiary-fixed-dim": "#74d8be",
+                    "primary-fixed-dim": "#ffb2b6",
+                    "on-primary-container": "#fffaf9",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "outline": "#ad8789",
+                    "surface-container-lowest": "#190a0b",
+                    "secondary": "#f3be53",
+                    "surface-container-low": "#291718",
+                    "on-tertiary": "#00382d",
+                    "secondary-fixed-dim": "#f3be53",
+                    "secondary-fixed": "#ffdea5",
+                    "on-background": "#fcdbdb",
+                    "surface-dim": "#1f0f10",
+                    "on-surface": "#fcdbdb",
+                    "surface-variant": "#442f30",
+                    "surface-container-highest": "#442f30",
+                    "on-tertiary-container": "#eefff8",
+                    "surface-tint": "#ffb2b6",
+                    "inverse-on-surface": "#402b2c",
+                    "background": "#1f0f10",
+                    "tertiary-fixed": "#91f5da",
+                    "surface": "#1f0f10"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "container-margin": "5vw"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Bebas Neue"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Bebas Neue"],
+                    "headline-lg": ["Bebas Neue"],
+                    "label-sm": ["Inter"],
+                    "display-hero": ["Bebas Neue"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B; /* Override to true streaming dark as per style guidance */
+            color: #fcdbdb;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cinematic-shadow {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .rose-glow:hover {
+            box-shadow: 0 0 40px rgba(229, 9, 70, 0.4);
+            transform: scale(1.05);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+        }
+        .vignette {
+            background: radial-gradient(circle, transparent 40%, #0A0A0B 100%);
+        }
+        .nav-scrolled {
+            background-color: rgba(10, 10, 11, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out bg-gradient-to-b from-background to-transparent flex justify-between items-center px-[5vw] py-md" id="top-nav">
+<a class="font-headline-lg text-headline-lg text-primary tracking-widest cursor-pointer" href="index.html">Cherish</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline-md text-headline-md transition-all duration-300" href="memories.html">Browse</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md hover:scale-105 transition-transform duration-300" href="dashboard.html">My Memories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md hover:scale-105 transition-transform duration-300" href="library.html">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md hover:scale-105 transition-transform duration-300" href="memories.html">Timeline</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="text-primary p-base hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-headline-md">search</span>
+</button>
+<a class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant hover:scale-105 transition-transform duration-300 cursor-pointer block" href="auth.html">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A close-up high-fashion portrait of a person with stylish lighting, emphasizing a premium and modern aesthetic. The background is a soft, deep charcoal that complements the dark mode theme of the application. The lighting is dramatic, casting cinematic shadows that give the profile image a high-production, professional feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG2FXvPmKQj9W2V-x5MwGieoCtAjuwG8hOsMXl3eGac5ghN2WM2jwpE9RJ08n9n8osS0MyNVIyV038weAR5HyY7m-NYOVELBU9EvPg_R5SlS5JhgN9Xau54efe5Py4lmC-Wb4MkFDn7Jl8t0L3hAoz2LTWJ5TGDkuWbIsM4R6ju0LJiK_n1ErW7tnSRkT1dDq96Clh7kVLUKfDRLQWPSJzGDoNr1kDzxGZN_KWjER6wJq8R5yrnNM"/>
+</a>
+</div>
+</header>
+<main>
+<!-- Hero Section: Billboard -->
+<section class="relative h-screen w-full flex items-center px-[5vw] overflow-hidden">
+<!-- Hero Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0B] via-[#0A0A0B]/60 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle shot of a romantic couple walking hand-in-hand through a sun-drenched coastal meadow at golden hour. The lighting is warm and ethereal, with deep blacks in the shadows to match the noir aesthetic. The overall mood is nostalgic, premium, and deeply emotional, looking like a high-budget film still." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEy7RCkqI14-5h-xV-V3lcgNvSg-5XovSUZ2JAQ6cNlSllPq41c0DotvMradXaVlHav9lv_yd4sRRLaJkIGhqvfJBpPvKtnLdL6gE0j5pHDxB0kYqOjqN9CmKLq_wUxuYK5OR-lqrhgzCNIZCXelDcP9VbVLDY5-CKL8XtrHklkgCfkN6G8-GgN199cTUm2_qH6V86OZtp3ivRITTbwki2n-N8NGDl2Kz0M4WXSHJwyKW7g3Leoj0')"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-20 max-w-3xl space-y-md">
+<div class="inline-flex items-center gap-xs px-sm py-1 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm uppercase tracking-tighter">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    Everything for free
+                </div>
+<h1 class="font-display-hero text-display-hero uppercase leading-none">Your love story,<br/><span class="text-primary">now streaming.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Turn your most precious memories into a personalized, high-production streaming experience. Build your legacy, share your journey, and cherish every moment forever.
+                </p>
+<div class="flex flex-wrap gap-md pt-base">
+<a class="bg-primary-container text-on-primary-container px-xl py-md font-headline-md text-headline-md uppercase rose-glow transition-all duration-500 rounded-lg inline-block" href="auth.html">
+                        Start free — everything included
+                    </a>
+<a class="border-2 border-on-surface text-on-surface px-xl py-md font-headline-md text-headline-md uppercase hover:bg-on-surface hover:text-background transition-all duration-300 rounded-lg inline-block" href="#how-it-works">
+                        Learn more
+                    </a>
+</div>
+</div>
+</section>
+<!-- Live Mockup Section -->
+<section class="py-xl px-[5vw] bg-[#0A0A0B]">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-xs">Professional Production, Zero Cost</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">See how your memories transform into a premium cinematic interface.</p>
+</div>
+<div class="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-lg">
+<!-- Laptop Mockup -->
+<div class="w-full md:w-3/4 relative cinematic-shadow rounded-xl overflow-hidden border border-outline-variant bg-surface-container">
+<div class="aspect-video bg-cover bg-center" data-alt="A mockup of a high-end streaming service interface on a laptop screen, displaying a 'Cherish' branded dashboard. The UI features elegant bento-style grids of wedding and travel photos arranged as movie posters. The color palette is dominated by deep blacks and vibrant rose-red accents, maintaining a premium, cinematic feel throughout the digital interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLtViuZ7DVyqHsTudZHGIj2_PuK9qQFVfUAproWjEeb0749fzaCiVO_wp1CB8Wt1X2Y_2g0P5Vj6SBG-1p_acZy14TPlCRlNAggPZ_Su4_vmxTcPR0gVH6aDPZhqDQPK0LJx-f5_iW5b8SjMB95V0_INeW9-bEDKzDCeHF60cWH0PKY-B2ciH2n1ztdEuAVUlyAaA4Q7YSHanvdM8Q3Ug_CoXhWbaw790_Ho4ja2YvDMI0YlX-Nlc')"></div>
+</div>
+<!-- Mobile Mockup -->
+<div class="absolute -bottom-10 right-0 md:right-10 w-48 h-[400px] hidden lg:block cinematic-shadow rounded-[32px] border-[8px] border-surface-container-highest overflow-hidden bg-background">
+<div class="w-full h-full bg-cover bg-center" data-alt="A mobile smartphone mockup showing the Cherish app's vertical feed. The screen shows a beautifully formatted timeline of romantic memories with soft bokeh backgrounds and high-contrast typography. The design is sleek and modern, with the signature rose-red heartbeat accent and immersive dark mode background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGSSrvdyPslJ1UFGyNTI-vbyg1fFpYXPqCGc6-mH82dNJ9Js0ad_fEvztWLrQjEQAv7aH2MuoPFT1_zN4HnrWHD1d9Jt7KM8IGvwXXkufG4exWXxfkJ9ov6JLoS0TZli4V_Y2SwN65JCu989sUg9vzwq7vJvxvzAGt_S-AEIe7UdWxOeg48kDFaTkqm-2s3enD1FatpAsiXEuvoPcBJRIykYW4XlTx8yJQL5wTlA9xUazNC-Kz5vY')"></div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-xl px-[5vw] bg-surface-dim" id="how-it-works">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<div class="group space-y-md p-lg glass-panel rounded-xl border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="w-16 h-16 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-headline-lg" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">1. Upload</h3>
+<p class="text-on-surface-variant">Sync your photos and videos effortlessly. Our AI organizes your moments into seamless cinematic sequences.</p>
+</div>
+<div class="group space-y-md p-lg glass-panel rounded-xl border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="w-16 h-16 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-headline-lg" style="font-variation-settings: 'FILL' 1;">palette</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">2. Design</h3>
+<p class="text-on-surface-variant">Choose from professionally curated themes. Personalize every row, title, and cover art to match your vibe.</p>
+</div>
+<div class="group space-y-md p-lg glass-panel rounded-xl border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="w-16 h-16 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-headline-lg" style="font-variation-settings: 'FILL' 1;">share</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase">3. Share</h3>
+<p class="text-on-surface-variant">Generate your unique streaming link. Invite family and friends to experience your story on any device.</p>
+</div>
+</div>
+</section>
+<!-- Feature Grid (Bento Style) -->
+<section class="py-xl px-[5vw]">
+<div class="mb-xl max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-xs leading-none">Unrivaled Power.<br/><span class="text-primary">Always Free.</span></h2>
+<p class="text-on-surface-variant">We believe memories shouldn't have a price tag. Every feature is unlocked from day one.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-md h-full md:h-[600px]">
+<!-- Big Feature -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl bg-surface-container border border-outline-variant">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700 opacity-60" data-alt="A high-contrast architectural shot of a modern gallery space with glowing red light installations. The composition is clean and minimalist, using shadows and light to create depth. This image serves as a conceptual background for a high-end technology feature, maintaining the noir aesthetic and rose-red color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHDgdHX4j2Z2HqLH5sUvE1zLL3k4eCwjTU9fzbbvHjQN_oeL0of-cjjHfzuAumTIoNW9Msd1uQ0666IMSZfgfvoRfYxAE00ZPTXtfHBTxaNt3vw18dq2J16mFJ4RzLJJ9HdRYl-zeilf8aOUrnOukhlNZWlKeIk3m7FY2HbPDnAlFDI8Q3JlK9bTJ3TlcHdwCn_ga-pbiRvMwSLDqzvmkLACtz5eXdUfX2GzwuzvhT6PgNWt8leUM')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent px-lg pb-lg flex flex-col justify-end">
+<h4 class="font-headline-md text-headline-md uppercase">Dynamic Content Rails</h4>
+<p class="text-on-surface-variant">Organize your life into categories like 'Travel Adventures' or 'Date Nights' with horizontally scrolling carousels.</p>
+</div>
+</div>
+<!-- Theme Picker -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl bg-surface-container-high border border-outline-variant p-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-headline-lg mb-sm">auto_awesome</span>
+<h4 class="font-headline-md text-headline-md uppercase">Couture Themes</h4>
+</div>
+<p class="text-on-surface-variant">Switch between Classic Noir, Golden Hour, and Modern Minimal styles with a single click.</p>
+</div>
+<!-- Free Message -->
+<div class="relative group overflow-hidden rounded-xl bg-primary-container border border-outline-variant p-lg flex flex-col justify-between">
+<h4 class="font-headline-md text-headline-md uppercase text-on-primary-container">100% Free Forever</h4>
+<p class="text-on-primary-container/80 text-body-md">No ads, no watermarks, no limits. Just pure storytelling.</p>
+</div>
+<!-- Motion -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container border border-outline-variant p-lg flex flex-col justify-between">
+<h4 class="font-headline-md text-headline-md uppercase">Motion UI</h4>
+<span class="material-symbols-outlined text-primary text-headline-lg self-end" style="font-variation-settings: 'FILL' 1;">motion_mode</span>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl px-[5vw] text-center border-t border-outline-variant bg-surface-dim">
+<div class="max-w-4xl mx-auto space-y-lg">
+<h2 class="font-headline-lg text-headline-lg uppercase leading-tight">Ready to direct your own story?</h2>
+<a class="bg-primary-container text-on-primary-container px-xl py-lg font-headline-md text-headline-md uppercase rose-glow transition-all duration-500 rounded-lg inline-block" href="auth.html">
+                    Create your free account
+                </a>
+<div class="pt-md">
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">No credit card required • Unlimited storage • Ad-free experience</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-lg border-t border-outline-variant bg-surface-dim dark:bg-surface-dim flex flex-col items-center gap-md py-xl px-[5vw] text-center">
+<div class="font-headline-md text-headline-md text-primary">Cherish</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">About Us</a>
+</div>
+<div class="text-primary font-body-md text-body-md">Everything for free. Cherish © 2024</div>
+</footer>
+<script>
+        // Simple scroll interaction for the Top Bar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+                nav.classList.remove('bg-gradient-to-b', 'from-background', 'to-transparent');
+            } else {
+                nav.classList.remove('nav-scrolled');
+                nav.classList.add('bg-gradient-to-b', 'from-background', 'to-transparent');
+            }
+        });
+
+        // Hover effect for feature cards
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.5s ease-out';
+            });
+        });
+    </script>
+</body></html>

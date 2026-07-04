@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publish Your Memory | Cherish</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .rose-glow {
+            box-shadow: 0 0 20px rgba(229, 9, 70, 0.3);
+        }
+        .rose-glow-hover:hover {
+            box-shadow: 0 0 40px rgba(229, 9, 70, 0.5);
+        }
+        .glass-panel {
+            background: rgba(45, 27, 28, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        @keyframes celebrate {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-celebrate {
+            animation: celebrate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#68001a",
+                        "error-container": "#93000a",
+                        "on-secondary": "#412d00",
+                        "surface-container-high": "#392526",
+                        "on-primary-fixed": "#40000d",
+                        "surface-container": "#2d1b1c",
+                        "on-secondary-container": "#382700",
+                        "primary": "#ffb2b6",
+                        "secondary-container": "#b88921",
+                        "surface-bright": "#493435",
+                        "tertiary": "#74d8be",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#271900",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#be0038",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdada",
+                        "outline-variant": "#5d3f40",
+                        "inverse-surface": "#fcdbdb",
+                        "on-tertiary-fixed": "#002019",
+                        "on-tertiary-fixed-variant": "#005142",
+                        "on-primary-fixed-variant": "#920028",
+                        "on-surface-variant": "#e6bcbe",
+                        "tertiary-container": "#00836d",
+                        "primary-container": "#e50946",
+                        "tertiary-fixed-dim": "#74d8be",
+                        "primary-fixed-dim": "#ffb2b6",
+                        "on-primary-container": "#fffaf9",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "outline": "#ad8789",
+                        "surface-container-lowest": "#190a0b",
+                        "secondary": "#f3be53",
+                        "surface-container-low": "#291718",
+                        "on-tertiary": "#00382d",
+                        "secondary-fixed-dim": "#f3be53",
+                        "secondary-fixed": "#ffdea5",
+                        "on-background": "#fcdbdb",
+                        "surface-dim": "#1f0f10",
+                        "on-surface": "#fcdbdb",
+                        "surface-variant": "#442f30",
+                        "surface-container-highest": "#442f30",
+                        "on-tertiary-container": "#eefff8",
+                        "surface-tint": "#ffb2b6",
+                        "inverse-on-surface": "#402b2c",
+                        "background": "#1f0f10",
+                        "tertiary-fixed": "#91f5da",
+                        "surface": "#1f0f10"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "container-margin": "5vw"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "label-sm": ["Inter"],
+                        "display-hero": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen selection:bg-primary-container selection:text-white">
+<!-- Header (Shared Component: TopNavBar) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-[5vw] py-md transition-all duration-500 ease-in-out">
+<a href="index.html" class="font-headline-lg text-headline-lg text-primary tracking-widest hover:scale-105 transition-transform duration-300 cursor-pointer block">
+            Cherish
+        </a>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="memories.html">Browse</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="dashboard.html">My Memories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="library.html">Library</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="memories.html">Timeline</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A stylish circular profile avatar of a sophisticated individual in low-light cinematic photography. The lighting is warm and artistic, reflecting the premium dark mode aesthetic of the Cherish brand. High-contrast colors of deep shadows and rose-red highlights frame the face, suggesting a user of an exclusive streaming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0LyB4dj-PvDkUXW06tA3trFyUjYTZ1BNe9JdYLUyOPeQmfI7iZYGHo2weyGBcKILQbHXdfNmbcmsl2qv2FQ9Pk0_jQA3hsZ92BlOtXIuveByt8qFJBZl1W9M49tHeFOX4L0dCkk7IAP_6p97tnIZwOeEhxb4uxhWChiDGixlFnr4SDvlHIDXR3ED8KUCgeCy-WFfXsPig37pKFyN1eHjr_NoziwyOyLCTA5I-bJb4EtQZiEdz3m0"/>
+</div>
+</div>
+</header>
+<main class="relative pt-xl min-h-screen flex items-center justify-center overflow-hidden px-[5vw]">
+<!-- Atmospheric Background Animation -->
+
+<!-- Background Decorative Vignette -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background pointer-events-none"></div>
+<!-- Publish Modal Container -->
+<div class="relative z-10 w-full max-w-2xl glass-panel border border-outline-variant/30 rounded-xl p-lg shadow-2xl rose-glow" id="publish-modal">
+<!-- Step 1: Configuration -->
+<div class="space-y-lg" id="step-config">
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs uppercase">Ready to Go Live?</h2>
+<p class="text-on-surface-variant font-body-md">Your memory is almost ready for the world to see.</p>
+</div>
+<div class="space-y-md">
+<!-- Slug Generator -->
+<div class="group">
+<label class="block text-label-sm font-label-sm text-on-surface-variant uppercase mb-base tracking-widest">Custom URL Path</label>
+<div class="relative flex items-center">
+<span class="absolute left-md text-on-surface-variant/50 font-body-md">cherish.memories/</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg py-md pl-44 pr-md text-primary font-body-md transition-all outline-none" type="text" value="summer-in-amalfi-2024"/>
+<button class="absolute right-md material-symbols-outlined text-primary-container text-body-md hover:rotate-180 transition-transform duration-500">autorenew</button>
+</div>
+</div>
+<!-- Visibility Toggles -->
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface-variant uppercase mb-base tracking-widest">Visibility Settings</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+<button class="flex flex-col items-center gap-xs p-md border-2 border-primary-container bg-primary-container/10 rounded-xl text-primary transition-all">
+<span class="material-symbols-outlined">public</span>
+<span class="font-label-sm">Public</span>
+</button>
+<button class="flex flex-col items-center gap-xs p-md border border-outline-variant hover:border-primary/50 rounded-xl text-on-surface-variant transition-all bg-surface-container-low hover:bg-surface-container-high">
+<span class="material-symbols-outlined">link</span>
+<span class="font-label-sm">Unlisted</span>
+</button>
+<button class="flex flex-col items-center gap-xs p-md border border-outline-variant hover:border-primary/50 rounded-xl text-on-surface-variant transition-all bg-surface-container-low hover:bg-surface-container-high">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-sm">Password</span>
+</button>
+</div>
+</div>
+<!-- Extra Options (Password Field Hidden Initially) -->
+<div class="hidden animate-celebrate" id="password-field">
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary-container rounded-lg py-md px-md text-on-surface font-body-md" placeholder="Enter protective password..." type="password"/>
+</div>
+</div>
+<div class="pt-md">
+<button class="w-full bg-primary-container text-white font-headline-md text-headline-md py-md rounded-lg rose-glow-hover transition-all flex items-center justify-center gap-sm" onclick="publish()">
+                        Publish Now
+                        <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Success State (Hidden) -->
+<div class="hidden space-y-lg animate-celebrate text-center" id="step-success">
+<div class="flex flex-col items-center gap-sm">
+<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container rose-glow">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mt-md tracking-widest">You're Live!</h2>
+<p class="text-on-surface-variant font-body-md max-w-sm mx-auto">Your beautiful memory is now streaming. Share the magic with your circle.</p>
+</div>
+<!-- QR & Link -->
+<div class="flex flex-col md:flex-row gap-lg items-center justify-center bg-surface-container-lowest/50 p-lg rounded-xl border border-outline-variant/30">
+<div class="bg-white p-base rounded-lg w-32 h-32 flex items-center justify-center shadow-lg">
+<img class="w-full h-full" data-alt="A clean and modern high-resolution QR code rendered in high contrast black and white. The background is a crisp white tile, and the code points to a digital memory URL. This is presented as an elegant technology element in a premium dark mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXJQRDm2q9qr3YlD5Ej5hdE6ROg-w9Ew4qZjS7eyrapzHFIDhE_UTe0aoAnZuJIvGHb0-7q6uqTBZnWBpYbgbarnTFXLk2yYdpeO_ba6ii3VCZvbv1TIvTOGjuq8bKodwOQEzClwJoKcpNyXeqRqVusAqewgutPAD6aEbRhgZb8zDWI6fZPYN-3WewZiuWbPfHkjzup6-6jdaxV5QsfLFtiO_2dq82qf1_5cszMTv5tdpcxU0Iwb0"/>
+</div>
+<div class="flex-1 w-full text-left space-y-sm">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Direct Link</label>
+<div class="flex items-center bg-surface-container border border-outline-variant rounded-lg overflow-hidden">
+<input class="bg-transparent border-none focus:ring-0 text-primary font-body-md py-md px-md w-full truncate" readonly="" type="text" value="cherish.memories/summer-amalfi"/>
+<button class="p-md text-primary hover:bg-primary-container/10 transition-colors material-symbols-outlined" onclick="copyLink()">content_copy</button>
+</div>
+</div>
+</div>
+<!-- Social Share -->
+<div class="space-y-md">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Share to Socials</label>
+<div class="flex justify-center gap-lg">
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-surface-container-high border border-outline-variant hover:border-primary-container hover:text-primary transition-all hover:scale-110">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-surface-container-high border border-outline-variant hover:border-primary-container hover:text-primary transition-all hover:scale-110">
+<span class="material-symbols-outlined">photo_camera</span>
+</button>
+<button class="w-14 h-14 rounded-full flex items-center justify-center bg-surface-container-high border border-outline-variant hover:border-primary-container hover:text-primary transition-all hover:scale-110">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md underline inline-block" href="dashboard.html">Return to Dashboard</a>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-dim border-t border-outline-variant py-xl px-[5vw] flex flex-col items-center gap-md text-center">
+<div class="font-headline-md text-headline-md text-primary">Cherish</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md opacity-80 hover:opacity-100" href="#">About Us</a>
+</div>
+<p class="text-on-surface-variant font-body-md opacity-60">Everything for free. Cherish © 2024</p>
+</footer>
+<script>
+        function publish() {
+            const configStep = document.getElementById('step-config');
+            const successStep = document.getElementById('step-success');
+
+            // Artificial delay for premium feel
+            configStep.style.opacity = '0';
+            configStep.style.transition = 'opacity 0.3s ease';
+
+            setTimeout(() => {
+                configStep.classList.add('hidden');
+                successStep.classList.remove('hidden');
+                confettiEffect();
+            }, 300);
+        }
+
+        function copyLink() {
+            // Simple visual feedback for copy
+            const btn = event.currentTarget;
+            const originalText = btn.innerText;
+            btn.innerText = 'check';
+            btn.classList.add('text-tertiary');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('text-tertiary');
+            }, 2000);
+        }
+
+        function confettiEffect() {
+            // Lightweight custom confetti using JS
+            for (let i = 0; i < 50; i++) {
+                const conf = document.createElement('div');
+                conf.style.position = 'fixed';
+                conf.style.width = '8px';
+                conf.style.height = '8px';
+                conf.style.backgroundColor = i % 2 === 0 ? '#ffb2b6' : '#e50946';
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.top = '-10px';
+                conf.style.borderRadius = '50%';
+                conf.style.zIndex = '100';
+                document.body.appendChild(conf);
+
+                const duration = Math.random() * 3 + 2;
+                const horizontal = (Math.random() - 0.5) * 200;
+
+                conf.animate([
+                    { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate(${horizontal}px, 100vh) rotate(720deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'cubic-bezier(0, 0, 0.2, 1)',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => conf.remove(), duration * 1000);
+            }
+        }
+
+        // Toggle visibility active state visuals
+        document.querySelectorAll('#step-config .grid button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#step-config .grid button').forEach(b => {
+                    b.classList.remove('border-primary-container', 'bg-primary-container/10', 'text-primary');
+                    b.classList.add('border-outline-variant', 'bg-surface-container-low', 'text-on-surface-variant');
+                });
+                btn.classList.add('border-primary-container', 'bg-primary-container/10', 'text-primary');
+                btn.classList.remove('border-outline-variant', 'bg-surface-container-low', 'text-on-surface-variant');
+
+                // Show password field if lock is selected
+                if(btn.innerText.includes('lock')) {
+                    document.getElementById('password-field').classList.remove('hidden');
+                } else {
+                    document.getElementById('password-field').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body></html>

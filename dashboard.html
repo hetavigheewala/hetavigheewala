@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | My Memories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 40px -5px rgba(229, 9, 70, 0.4);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .vignette-overlay {
+            background: linear-gradient(to top, rgba(10, 10, 11, 0.9) 0%, rgba(10, 10, 11, 0) 60%);
+        }
+        body {
+            background-color: #0A0A0B; /* True Streaming Dark base */
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f0f10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #442f30;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb2b6;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#68001a",
+                      "error-container": "#93000a",
+                      "on-secondary": "#412d00",
+                      "surface-container-high": "#392526",
+                      "on-primary-fixed": "#40000d",
+                      "surface-container": "#2d1b1c",
+                      "on-secondary-container": "#382700",
+                      "primary": "#ffb2b6",
+                      "secondary-container": "#b88921",
+                      "surface-bright": "#493435",
+                      "tertiary": "#74d8be",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#271900",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#be0038",
+                      "on-error": "#690005",
+                      "primary-fixed": "#ffdada",
+                      "outline-variant": "#5d3f40",
+                      "inverse-surface": "#fcdbdb",
+                      "on-tertiary-fixed": "#002019",
+                      "on-tertiary-fixed-variant": "#005142",
+                      "on-primary-fixed-variant": "#920028",
+                      "on-surface-variant": "#e6bcbe",
+                      "tertiary-container": "#00836d",
+                      "primary-container": "#e50946",
+                      "tertiary-fixed-dim": "#74d8be",
+                      "primary-fixed-dim": "#ffb2b6",
+                      "on-primary-container": "#fffaf9",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "outline": "#ad8789",
+                      "surface-container-lowest": "#190a0b",
+                      "secondary": "#f3be53",
+                      "surface-container-low": "#291718",
+                      "on-tertiary": "#00382d",
+                      "secondary-fixed-dim": "#f3be53",
+                      "secondary-fixed": "#ffdea5",
+                      "on-background": "#fcdbdb",
+                      "surface-dim": "#1f0f10",
+                      "on-surface": "#fcdbdb",
+                      "surface-variant": "#442f30",
+                      "surface-container-highest": "#442f30",
+                      "on-tertiary-container": "#eefff8",
+                      "surface-tint": "#ffb2b6",
+                      "inverse-on-surface": "#402b2c",
+                      "background": "#1f0f10",
+                      "tertiary-fixed": "#91f5da",
+                      "surface": "#1f0f10"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "80px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "md": "24px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "lg": "48px",
+                      "container-margin": "5vw"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Bebas Neue"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Bebas Neue"],
+                      "headline-lg": ["Bebas Neue"],
+                      "label-sm": ["Inter"],
+                      "display-hero": ["Bebas Neue"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 bg-gradient-to-b from-background to-transparent transition-all duration-500 ease-in-out">
+<nav class="flex justify-between items-center px-[5vw] py-md w-full">
+<a href="index.html" class="font-headline-lg text-headline-lg text-primary tracking-widest uppercase">
+                Cherish
+            </a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="memories.html">Browse</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline-md text-headline-md" href="dashboard.html">My Memories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="library.html">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="memories.html">Timeline</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:scale-105 transition-transform duration-300" data-icon="search">search</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant hover:scale-105 transition-transform duration-300 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A close-up high-fashion portrait of a young person with soft cinematic lighting, warm skin tones, and a deep moody black background. The style is professional photography with a shallow depth of field, reflecting the premium minimalist noir aesthetic of the Cherish brand. Subtle rose-red highlights reflect in their eyes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzLYzR9upMKrivULgUzidhgZ6aHEHZSrkF-m5lJzHLVAQ-t_klBZAZaOWXAyiCqwG1x1IWXoGJAy4CTYuYgIWIQPCVsjXFA-Q5GdwVNgMTWm12cHC-wbrFo_qTSh6vsBl-afs0peWRzy7oju9YjMkm1erO3Z2KhgEcF9gz7X9i0v4lfDhRZpchhlpL2YF_sM9bE9S8N56CV2VaDr2Ybie2olWRttvd9SjjZuPLMfdbJSObjkliECE"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-xl min-h-screen">
+<!-- Hero Section / Dashboard Title -->
+<section class="px-[5vw] pt-lg pb-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Your Premieres</h1>
+<p class="text-on-surface-variant max-w-2xl font-body-lg text-body-lg">Welcome back. Relive your most beautiful chapters or start crafting a new cinematic memory.</p>
+</div>
+<a class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-headline-md text-headline-md hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(229,9,70,0.3)] flex items-center gap-sm group" href="onboarding.html">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Create Your First Premiere
+                </a>
+</div>
+</section>
+<!-- Main Content Area: Dashboard Grid -->
+<section class="px-[5vw] py-md">
+<!-- Filter Bar (Minimalist) -->
+<div class="flex gap-md mb-lg overflow-x-auto pb-sm no-scrollbar">
+<button class="bg-surface-container-highest text-primary px-md py-xs rounded-full font-label-sm text-label-sm whitespace-nowrap">All Memories</button>
+<button class="text-on-surface-variant hover:text-on-surface px-md py-xs rounded-full font-label-sm text-label-sm transition-colors whitespace-nowrap">Published</button>
+<button class="text-on-surface-variant hover:text-on-surface px-md py-xs rounded-full font-label-sm text-label-sm transition-colors whitespace-nowrap">Drafts</button>
+<button class="text-on-surface-variant hover:text-on-surface px-md py-xs rounded-full font-label-sm text-label-sm transition-colors whitespace-nowrap">Protected</button>
+</div>
+<!-- Bento Grid of "Mini-Billboard" Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Published -->
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer glow-hover transition-all duration-500 bg-surface-container" onclick="window.location.href='editor.html'">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic 16:9 landscape of a romantic evening in Paris with the Eiffel Tower glowing in the distance. Warm streetlights reflect off rain-slicked cobblestones. Deep cinematic shadows and a romantic, high-contrast noir style with subtle rose-tinted color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5SDB8XsFwbczRsCxI5FYstckcLPCLR7c_QzKt3xci_4M1xA2MIG8sBNAtEpSI58eDr0OLQ32JF-kzoZIZN2bD3vpf9hxKedL57YWqpEcla9hOfBH-YTe4J9hhyI-LoHZ_8ILdedP0o0W1X3navmR0Z6pbyB-dBPNA3sqlRpfVc2uOxno2GsPsSZXoOQVArQHaUD_HLdkM6HjSmZBl0ZqMDEb9s6hmrEkEXT8Fw_pOLyWNA13T7tM"/>
+</div>
+<div class="absolute inset-0 vignette-overlay flex flex-col justify-end p-md">
+<div class="flex justify-between items-start mb-base">
+<span class="bg-tertiary-container text-on-tertiary-container px-sm py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest">Published</span>
+<span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white">Midnight in Paris</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase">Last edited 2 days ago</p>
+</div>
+</div>
+<!-- Card 2: Draft -->
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer glow-hover transition-all duration-500 bg-surface-container" onclick="window.location.href='editor.html'">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Two people walking hand-in-hand through a dense, sun-dappled pine forest in the golden hour. Beams of light pierce through the trees. The aesthetic is warm and intimate, following the Modern Minimalist Noir principles with deep blacks and vibrant warm highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjLYRX2TA3hU5Av0W3QPZ6QZ0JQAQNkm2sIM-E-1MvwbX_BELHQaY4XiHZcm_Zv7fU4dAFnU99olfGnJMW_LKKPQVHvaCd6VzNrwIf2YnSFnGLYY23Ww1EI6hwmp6dUjsyOHyT0f1c4jTlqPPTIcOT8VFxYuRAKNPGD6W7IC1T1eTNLyWr5PXzGmO8LB1kmJwxMM9NasvbctkqTF3HvAz79azKcvXk89S6FhAdvh621W_RXusqq4"/>
+</div>
+<div class="absolute inset-0 vignette-overlay flex flex-col justify-end p-md">
+<div class="flex justify-between items-start mb-base">
+<span class="bg-surface-container-highest text-on-surface-variant px-sm py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest">Draft</span>
+<span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white">The Forest Echoes</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase">Last edited 5 hours ago</p>
+</div>
+</div>
+<!-- Card 3: Password Protected -->
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer glow-hover transition-all duration-500 bg-surface-container" onclick="window.location.href='editor.html'">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sophisticated, minimalist interior of a luxury penthouse at night, overlooking a city skyline. A single red rose sits in a glass vase on a dark marble table. Cinematic lighting, deep contrast, and a sense of exclusive privacy. Rose-red accents pop against the deep black furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFesEzc-CD0NUl1gv_JjnkiOaBmEsYUvzLTMNgBc3RL30U0S3ohwqFaEagift_TOx27anFZfcd8YNhVS8ebqvA1r8-wsPdu1tfaWt6XCv-5h03rD0XaUiYHCCScLhTuipXrLAxuLjq303CMYIn4bSC5KwODlTzBAtqCz5RsDCo37R-pi0Xh5tjOK2xAn1p9kp5gYsy8vikS_5oc4bEhgWDfxAF1a5y9WC78_ExEfxyxw-YtF6R9hE"/>
+</div>
+<div class="absolute inset-0 vignette-overlay flex flex-col justify-end p-md">
+<div class="flex justify-between items-start mb-base">
+<div class="flex gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+                                    Protected
+                                </span>
+</div>
+<span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white">Our Secret Chapter</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase">Last edited 1 week ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-lg border-t border-outline-variant bg-surface-dim dark:bg-surface-dim flex flex-col items-center gap-md py-xl px-[5vw] text-center">
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-widest">
+            Cherish
+        </div>
+<div class="flex flex-wrap justify-center gap-lg font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">About Us</a>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md opacity-60">
+            Everything for free. Cherish © 2024
+        </p>
+</footer>
+<script>
+        // Micro-interaction for the Top Bar transparency on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('header');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-background');
+                nav.classList.remove('bg-background/80');
+            } else {
+                nav.classList.remove('bg-background');
+                nav.classList.add('bg-background/80');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cherish | Your Shared Life Story</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-vignette {
+            background: linear-gradient(to top, #1f0f10 0%, transparent 40%, transparent 60%, rgba(31, 15, 16, 0.8) 100%);
+        }
+        .rose-glow:hover {
+            box-shadow: 0 0 20px 5px rgba(229, 9, 70, 0.4);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-primary": "#68001a",
+                "error-container": "#93000a",
+                "on-secondary": "#412d00",
+                "surface-container-high": "#392526",
+                "on-primary-fixed": "#40000d",
+                "surface-container": "#2d1b1c",
+                "on-secondary-container": "#382700",
+                "primary": "#ffb2b6",
+                "secondary-container": "#b88921",
+                "surface-bright": "#493435",
+                "tertiary": "#74d8be",
+                "error": "#ffb4ab",
+                "on-secondary-fixed": "#271900",
+                "on-error-container": "#ffdad6",
+                "inverse-primary": "#be0038",
+                "on-error": "#690005",
+                "primary-fixed": "#ffdada",
+                "outline-variant": "#5d3f40",
+                "inverse-surface": "#fcdbdb",
+                "on-tertiary-fixed": "#002019",
+                "on-tertiary-fixed-variant": "#005142",
+                "on-primary-fixed-variant": "#920028",
+                "on-surface-variant": "#e6bcbe",
+                "tertiary-container": "#00836d",
+                "primary-container": "#e50946",
+                "tertiary-fixed-dim": "#74d8be",
+                "primary-fixed-dim": "#ffb2b6",
+                "on-primary-container": "#fffaf9",
+                "on-secondary-fixed-variant": "#5d4200",
+                "outline": "#ad8789",
+                "surface-container-lowest": "#190a0b",
+                "secondary": "#f3be53",
+                "surface-container-low": "#291718",
+                "on-tertiary": "#00382d",
+                "secondary-fixed-dim": "#f3be53",
+                "secondary-fixed": "#ffdea5",
+                "on-background": "#fcdbdb",
+                "surface-dim": "#1f0f10",
+                "on-surface": "#fcdbdb",
+                "surface-variant": "#442f30",
+                "surface-container-highest": "#442f30",
+                "on-tertiary-container": "#eefff8",
+                "surface-tint": "#ffb2b6",
+                "inverse-on-surface": "#402b2c",
+                "background": "#1f0f10",
+                "tertiary-fixed": "#91f5da",
+                "surface": "#1f0f10"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xl": "80px",
+                "gutter": "24px",
+                "sm": "12px",
+                "md": "24px",
+                "base": "8px",
+                "xs": "4px",
+                "lg": "48px",
+                "container-margin": "5vw"
+              },
+              "fontFamily": {
+                "headline-lg-mobile": ["Bebas Neue"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-md": ["Bebas Neue"],
+                "headline-lg": ["Bebas Neue"],
+                "label-sm": ["Inter"],
+                "display-hero": ["Bebas Neue"]
+              },
+              "fontSize": {
+                "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "display-hero": ["96px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-[5vw] py-md transition-all duration-500 ease-in-out">
+<a href="index.html" class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-widest">CHERISH</a>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline-md text-headline-md" href="memories.html">Browse</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="dashboard.html">My Memories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="library.html">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline-md text-headline-md" href="memories.html">Timeline</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A warm, intimate close-up portrait of a smiling woman with soft sunlight catching her hair, set against a deep cinematic dark background with subtle rose-red highlights. The style is professional lifestyle photography, capturing a genuine moment of happiness and connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDW7jxZr-8Ladv6ILdGFjjbXodsZHik8LcYKZmJ6tseLNzuxhM-Nn6VY_cq-fCSUq3ZrLEEbdc9-jyuBgVY67zUMe0DSripyD13p-roYS2Ztk0Iy-4MfyggNzECEhDWbdb-wIUWAXvTVGb4GLKzEELbH63IqmQhYoip10-mpUIzOlWl6HDJvuw0ymgAcCPV8YKtAHX457Mws25GeUI_zBkDECl6HH_SgrPtJ5TI0ndx0tp6nESkQ4"/>
+</div>
+</div>
+</nav>
+<!-- Hero Billboard Section -->
+<section class="relative w-full h-[663px] md:h-[751px] overflow-hidden">
+<!-- Hero Background Placeholder (Video Simulation) -->
+<div class="absolute inset-0 w-full h-full">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-10000 scale-110" data-alt="A sweeping, cinematic aerial view of a couple standing on a rugged cliffside at sunset, overlooking a vast, shimmering ocean. The color palette is dominated by deep obsidian blacks and a vibrant, romantic rose-red sky. The lighting is dramatic and warm, emphasizing the scale of the landscape and the intimacy of the couple." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5nCe5kAneVBPDslZRYpK2eiUBeLDJbWZlfYRJ1CibhQSDMkgnYui03nCxXVsCCj4rTFcDFRnic77dTHpDOoUY7vTGmJvunJRPbeK0wnEHdOWCvKl-A77gXkBzRN4DcH5vYySjFDUd-9scgmgNsv3IXcV4B8f-dEiJuVtPDoeB353mqXTS7ETo8duEbk01W1knq-iWREcXf8NdSb-v3WJQ-Q1i02j_tLa_JCcth8RhGJs5l3JjBYQ')"></div>
+<div class="absolute inset-0 hero-vignette"></div>
+</div>
+<!-- Hero Content -->
+<div class="absolute bottom-0 left-0 w-full p-[5vw] flex flex-col items-start gap-md z-20 pb-24 md:pb-32">
+<h1 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface drop-shadow-2xl">OUR PARIS ANNIVERSARY</h1>
+<div class="flex gap-md mt-sm">
+<button class="px-lg py-sm bg-primary-container text-on-primary-container rounded font-bold flex items-center gap-base rose-glow transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>Play</span>
+</button>
+<button class="px-lg py-sm glass-morphism text-on-surface rounded font-bold flex items-center gap-base border border-outline-variant hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined">info</span>
+<span>More Info</span>
+</button>
+</div>
+</div>
+<!-- Hero Controls -->
+<div class="absolute bottom-16 right-[5vw] z-20">
+<button class="w-10 h-10 rounded-full border border-outline text-on-surface flex items-center justify-center glass-morphism hover:scale-110 transition-transform" id="muteToggle">
+<span class="material-symbols-outlined" id="muteIcon">volume_off</span>
+</button>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="relative z-30 -mt-16 bg-gradient-to-b from-transparent via-background to-background">
+<!-- Category Navigation -->
+<div class="px-[5vw] flex gap-sm overflow-x-auto hide-scrollbar py-md scroll-smooth">
+<button class="px-md py-xs bg-primary-container text-on-primary-container rounded-full text-label-sm whitespace-nowrap">Adventures</button>
+<button class="px-md py-xs glass-morphism border border-outline-variant text-on-surface rounded-full text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">Date Nights</button>
+<button class="px-md py-xs glass-morphism border border-outline-variant text-on-surface rounded-full text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">Milestones</button>
+<button class="px-md py-xs glass-morphism border border-outline-variant text-on-surface rounded-full text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">Us</button>
+</div>
+<!-- Continue Loving You (Progress Bar Row) -->
+<section class="py-md">
+<h2 class="px-[5vw] font-headline-md text-headline-md mb-sm text-primary">CONTINUE LOVING YOU</h2>
+<div class="flex gap-md overflow-x-auto hide-scrollbar px-[5vw] snap-x">
+<div class="flex-none w-[280px] md:w-[320px] snap-start group cursor-pointer">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A cozy, high-contrast indoor scene of two people laughing over a board game in a dimly lit apartment. Warm rose-red light spills from a nearby lamp, creating deep, cinematic shadows. The aesthetic is intimate and documentary-style, focusing on the shared joy and candid expression of love." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5NJ2gK2OCNotPhqeYMljEQ6GWwbU908iD20k7qPj7RqXz6g6H4GJWZdyW1X1AwJY8RnZlnSbtfLEpaDtrnv6IJ9J8B7dYaK27R4o7J6PK1ptmu4LyhJau8B7mEh1GTKUC34a3rH4zXfp17FFeQIVCPEyBmazwFJLBSiuxT2LG-3WfHoU9TsRGjfsNjOIB_KDHDddIS2Fe8sT_fIB1JIFeSnyksVD_QPZIVMyamXEO1_jhac7y518"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-surface-variant">
+<div class="h-full bg-primary-container w-[65%]"></div>
+</div>
+</div>
+<p class="mt-base text-body-md font-bold truncate">Baking Night Disasters</p>
+</div>
+<div class="flex-none w-[280px] md:w-[320px] snap-start group cursor-pointer">
+<div class="relative aspect-video rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stunning outdoor scene featuring a couple sitting on the back of a vintage pickup truck, looking at a starry night sky. The deep black landscape is punctuated by the soft rose-red glow of a nearby campfire. The atmosphere is peaceful, romantic, and expansive, captured in a modern cinematic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8-aGMM2ZasUb_y7VDs3b6jD7FHsYYR-z19EYfmuP546dDAqDmxcSaOWDp2Zui_5acelAy6_1xAONcIvRWv5g8w_Li8o1zpsIkAG-5f35ENABF-ft8EpYayfLkQFFFBtjfCwcK4zANDadOSmajVq5Peds_N54M60vYqQyCLjvHZnSIYBYEy5Q4Bcw9YlgI7U8nuPWD7D9hHExCPG56vH0-I5kdMGUZ08oEhOOYq7NCFcQrm36bmfI"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-surface-variant">
+<div class="h-full bg-primary-container w-[20%]"></div>
+</div>
+</div>
+<p class="mt-base text-body-md font-bold truncate">Star Gazing at the Lake</p>
+</div>
+</div>
+</section>
+<!-- Our Adventures (Landscape) -->
+<section class="py-md">
+<h2 class="px-[5vw] font-headline-md text-headline-md mb-sm">OUR ADVENTURES</h2>
+<div class="flex gap-md overflow-x-auto hide-scrollbar px-[5vw]">
+<!-- Item 1 -->
+<div class="flex-none w-[240px] md:w-[280px] cursor-pointer group">
+<div class="aspect-video rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dramatic landscape shot of a mountain peak shrouded in morning mist. The lighting is cool-toned with a single bright rose-red light trail from a hiker's path. The composition is clean and minimalist, evoking a sense of adventure and discovery in the great outdoors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP9JuY-jUhAX82XxcLySq-y8Y3U5J_5noNh9FvJdfjwkpeJSW8tdgH26m82x1BeZG3xAII6zdNOq5zfT67gI9yx3Z-e4LDbJ260FgduNpQtLMWImyRuIS8wu89tydYvcjwC4EPXJeK-AJ1eHWijeGRyb29QXjzVqQj3y6_N6yC_uenSxm4owhq5VuZunITUDkhQ3GtYJkiIGpF9gqiG7XVKmM0WRYpCzz83F0157QolK6Az9yRPL4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary-container">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex-none w-[240px] md:w-[280px] cursor-pointer group">
+<div class="aspect-video rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant street photography shot from a busy city market at night. Neon signs in deep rose-red reflect on wet cobblestones. The scene is full of energy and movement, with people blurred in the background, focusing on the intimate connection between a couple in the foreground." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgh8vf8ErwOtSTKLxuibxhjL9S7-UEX-zZGxtqQ-NrIiMLomEKirLiceU3X1KP7Bh4Q4IZU6KqP7WcRQO9Wu9ba04rO35T6yvl2t30iKXp6j92sXP6JzVWaex-y_yxovP62boWdWVGpf5_YMpAhYhpphiRgZEmbFJ3jFdHBtBfjS0qTf1sdmjCDgReEsHto9Vk5Rk1n6bBALFAUCtSG0k4bk8DJh3vRseD7DAGyGCZA0hdL0B5uME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary-container">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex-none w-[240px] md:w-[280px] cursor-pointer group">
+<div class="aspect-video rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene underwater shot of two people swimming together in crystal clear turquoise water. Sunlight pierces the surface, creating dappled patterns of light. The overall tone is ethereal and calm, with subtle rose-colored reef elements in the background for color harmony." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDryoOWaCdE0aebWAUgRMt6Z2v1TYThlgndmQaFf0dh1n0O1MpG2MinCDgR40Zv21ebWOZxj9STMb-XOv4xq_64fInIk9bds1r4WaanRmtzhQAWUx08y7jOmgi9lUvvp-ZqjXzbYIlMde_s738folwSpI8lK7wqyaoYYutajirtoYIVNZgQdHl-1-rWSSmZVqA6Pogt1_yAYMVMc2mBZhUvLmHxSx6VVBRT40EygRmm9aaEib58JY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary-container">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Top 10 Moments (Numerals) -->
+<section class="py-md overflow-hidden">
+<h2 class="px-[5vw] font-headline-md text-headline-md mb-sm">TOP 10 MOMENTS</h2>
+<div class="flex gap-xl overflow-x-auto hide-scrollbar px-[5vw] items-center pt-8">
+<!-- Rank 1 -->
+<div class="flex-none relative h-48 w-48 flex items-center justify-end">
+<div class="absolute -left-8 font-display-hero text-[180px] leading-none text-transparent stroke-outline" style="-webkit-text-stroke: 4px rgba(243, 190, 83, 0.4);">1</div>
+<div class="relative w-32 h-48 rounded-lg overflow-hidden border border-outline-variant shadow-2xl z-10 rose-glow transition-all">
+<img class="w-full h-full object-cover" data-alt="A high-fashion inspired portrait of a couple in formal attire, standing in a grand architectural hall. The lighting is sharp and cinematic, with deep blacks and a strong rose-red key light. The mood is sophisticated and timeless, highlighting a major milestone in their relationship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt4BfrhqblmfbynobNG8UymYYk2nwHvhqSA0Klpmteyttoh21xKAFGwWLoDoW8Cdsz72kKh-3VUKJ5RhVoX4QNoiWu0eYQ8KOkVXY8Ckz4ubK9lSLjn-7hy5XHl8hP74TXw-VLpmUUvVUuC70VnFqa3NZtDRhQQN8eFsH6bcI15DasGSfITsHwKWz_JExcnpBCnv3KSyFPF4KzFuFas-tJ2m2X3JbV-9Q0OTwS_LX6YZxhCW_t_cQ"/>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="flex-none relative h-48 w-48 flex items-center justify-end">
+<div class="absolute -left-8 font-display-hero text-[180px] leading-none text-transparent" style="-webkit-text-stroke: 4px rgba(243, 190, 83, 0.4);">2</div>
+<div class="relative w-32 h-48 rounded-lg overflow-hidden border border-outline-variant shadow-2xl z-10 rose-glow transition-all">
+<img class="w-full h-full object-cover" data-alt="A candid, warm-toned image of a proposal on a rainy city street. Reflection of city lights in puddles creates a magical atmosphere. The focal point is the emotion on their faces, framed by a soft rose-red umbrella. A cinematic and emotionally powerful storytelling moment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW97Y-_jgN8fgxIJu9kW_RJsA4aiBgW0tit5kqHVeZO0Q2bvFNA7P5--4ncjueDP6vIhughAtixq1cXfQuP_9AG6gGsYJpiFSgrEXVQlphGnlMft_Fi7rdqB4A6nQ3qsV5RcEovJxkXNsczxm7_kVUXYCn7Ndxwx-DWSVAqc312bQMGhKP176p8F2b24FeA_Iu8ibbsvrBivhiU3kuW2WSS2wMZyO5axRlQDBkWBsY4bU7OK-ZTqU"/>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex-none relative h-48 w-48 flex items-center justify-end">
+<div class="absolute -left-8 font-display-hero text-[180px] leading-none text-transparent" style="-webkit-text-stroke: 4px rgba(243, 190, 83, 0.4);">3</div>
+<div class="relative w-32 h-48 rounded-lg overflow-hidden border border-outline-variant shadow-2xl z-10 rose-glow transition-all">
+<img class="w-full h-full object-cover" data-alt="A heartwarming scene of a couple moving into their first home together. They are surrounded by cardboard boxes, sharing a celebratory toast. The light is bright and optimistic, with rose-red ribbons tied to some of the furniture, symbolizing a new beginning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSyKLFefL-r0PpEPFvl3YuT3Df7EO0itWqcpHC3S1AzT6Nukri9dlLgT3UfH8z0szAxscYhtCSywtfSACd_2LDISpPL8bsnTCQJM_AScU7__qeejQaKcKSrmWKD3FqUzNP0cThI4j54ujQhO4_-yEXxLEVRhFd4Y-aiu1FShpJ5jC2V289kT1zXxLM1xAFjU1iPfuEyPdejnEOnEO1weN4DwFmW3iknjHJsvdC5iPbsyAgvgB0QfA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Date Nights (Portrait) -->
+<section class="py-md mb-32">
+<h2 class="px-[5vw] font-headline-md text-headline-md mb-sm">DATE NIGHTS</h2>
+<div class="flex gap-md overflow-x-auto hide-scrollbar px-[5vw]">
+<div class="flex-none w-36 md:w-48 cursor-pointer group">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A stylish portrait of a cocktail glass on a dark, reflective bar counter. A single rose petal floats in the drink. The lighting is moody and intimate, typical of a high-end jazz club. The aesthetic is minimalist and luxurious, focusing on the sensory experience of a date night." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiIWQyodBDm9eJSxIi2_ai6hzQX_4O1nw6ldSv6tGj49mdaW-yaNA0gHWRNqrK3QmAqDGUUw2FoyouZNJPxoWF2myM4Bs61x779OTC7VaR3t8Xsnnp_hK1E2F_o9U76txqgEBzKvhys55p4MO3Wajf4BOrs7e3bUuBx3y3OvJM8Bozkwo04x9KCTFFwTqhEC0J2Gvj2wN7kmC-4nqrc3re5kW-Nvt2u01xp_3-yU_oB6KOOowYRW8"/>
+</div>
+<p class="mt-base text-label-sm text-center uppercase tracking-widest text-on-surface-variant">The Jazz Club</p>
+</div>
+<div class="flex-none w-36 md:w-48 cursor-pointer group">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A romantic scene at an outdoor cinema under the moon. A vintage car is parked with a blanket and pillows in the back. The screen in the distance glows with a soft light, while a rose-red lantern provides a warm focal point in the foreground. A perfect, nostalgic date night setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBynU7P-0d6p9NRajcdxGXO6j8tnbLYSelBTHW4R_Jz6dnbYRJngLnNK06mfL5VDu0BTCFgRdTKi2KeE4O-Ek7pW7ba_oVFP8JR7gcvO5s5AUkLWVb7xB8XtKu3nfLNSGbYdUD4ki5DV1_Yirdo2JUNCNGcUTfLygJPpMjeNN64qG4V7ORTyCU_Bov0PN4BxTpJNpPxn5zBROq0--5rDpGXjyoepRwqFz1puGAhTJSnSIMrh7QaDiM"/>
+</div>
+<p class="mt-base text-label-sm text-center uppercase tracking-widest text-on-surface-variant">Drive-in Movie</p>
+</div>
+<div class="flex-none w-36 md:w-48 cursor-pointer group">
+<div class="aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant rose-glow transition-all relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An artistic shot of two hands intertwined on a white tablecloth during a candlelight dinner. The light from a single candle casts long, dramatic shadows. The color palette is dark and warm, with the rose-red glow of the candle flame acting as the primary light source." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3IPnZ32rbZM8KLOKWQWdCjMYd9qJRZAqIlqMpfseUZzBN96SxzmHp5F9DSzpFZ7FjogUD7U65DU-RPnIkJlybHSeHXpPcYWpJXSsb8e5KGcOBfo8u4omL2tPD1NUoLbglqC-YkfqhXvlVxiVc3qsMGT8E2SJLxMSGlI6kZIIqrVnJbnFCXaNWShWNQCKU8lXr7c8bVCR_SJq5HMK2sqBE1JEEhkLUbM06DFGj5qAFUcujjlBf3Pc"/>
+</div>
+<p class="mt-base text-label-sm text-center uppercase tracking-widest text-on-surface-variant">Candlelit Dinner</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Music Mini-Player -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant px-[5vw] py-sm flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-primary-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Album art featuring an abstract heart shape formed by swirling rose-red and obsidian black paint. The style is modern and expressive, suggesting a deep, rhythmic emotional resonance. The composition is centered and impactful, fitting for a music track cover." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRiEi2Jy_z9UqJN01GGloWmCtRPHpVEKS3-8WGtMLvpBwE4incXu03tggq8mYydK2AFITp80zy2D8shhaKs7xHG3bCGfEIwcSMLfCsYsxHwbtYnERqaSZbA5g-y0_7fAFb_ZKu9GcGtLF8flhNU1EYCHDKlpyvmWexQj2BmFQyW8W-rsSvLcmaYfYH7cBCPq5lUND9dvxGyY1v7gtoOBFh0AwrD8O4PoGavVkI0ht1Y_Yelc4zoHo"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-body-md truncate max-w-[150px] md:max-w-xs">Our Favorite Song</span>
+<span class="text-label-sm text-on-surface-variant">Now Playing...</span>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">skip_previous</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-on-surface text-background flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">skip_next</span>
+</button>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
+<div class="w-24 h-1 bg-surface-variant rounded-full">
+<div class="w-3/4 h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-lg border-t border-outline-variant bg-surface-dim py-xl px-[5vw] flex flex-col items-center gap-md text-center mb-24">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">CHERISH</div>
+<div class="flex gap-md flex-wrap justify-center text-on-surface-variant font-body-md">
+<a class="hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="hover:text-primary underline transition-all" href="#">Help Center</a>
+<a class="hover:text-primary underline transition-all" href="#">About Us</a>
+</div>
+<p class="text-body-md opacity-80 mt-md">Everything for free. Cherish © 2024</p>
+</footer>
+<script>
+        // Mute Toggle Interaction
+        const muteToggle = document.getElementById('muteToggle');
+        const muteIcon = document.getElementById('muteIcon');
+        let isMuted = true;
+
+        muteToggle.addEventListener('click', () => {
+            isMuted = !isMuted;
+            muteIcon.textContent = isMuted ? 'volume_off' : 'volume_up';
+            muteToggle.classList.toggle('bg-primary', !isMuted);
+            muteToggle.classList.toggle('text-on-primary', !isMuted);
+        });
+
+        // Simple Scroll Animation for Header
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface-container-highest', 'shadow-xl');
+                nav.classList.remove('bg-background/80');
+            } else {
+                nav.classList.remove('bg-surface-container-highest', 'shadow-xl');
+                nav.classList.add('bg-background/80');
+            }
+        });
+    </script>
+</body></html>
